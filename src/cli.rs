@@ -469,6 +469,7 @@ pub async fn parse_args() -> AppSettings {
     let config_args = load_config(config_path.as_deref().unwrap_or(""))
         .await
         .unwrap_or_default();
+	print!("{:?}", config_args);
 
     merge_configs(clap_args, config_args).await
 }
